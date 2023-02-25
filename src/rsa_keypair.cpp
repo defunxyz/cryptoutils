@@ -34,4 +34,4 @@ void generare_key_pair(const std::string name, const fs::path path, const char* 
 
 void print_help(){}
 
-int main(int argc, char* argv[]) { return 0; }
+int main(int argc, const char* argv[]) { return 0; }
