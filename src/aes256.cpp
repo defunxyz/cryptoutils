@@ -1,25 +1,6 @@
 // Copyright (C) Fisnik. All rights reserved.
 #include <iostream>
-#include <fstream>
-#include <streambuf>
-#include <exception>
-#include <cassert>
-#include <vector>
-#include "filesystem"
-
-#include "crypto++/sha.h"
-#include "crypto++/aes.h"
-#include "crypto++/osrng.h"
-#include "crypto++/ccm.h"
-#include "crypto++/modes.h"
-#include "crypto++/hex.h"
-#include "crypto++/files.h"
-#include "crypto++/pwdbased.h"
-
-namespace fs = std::filesystem;
-using namespace CryptoPP;
-
-constexpr auto ITERATIONS = 0x3E8;
+#include "common.h"
 
 // Encryption and Decryption of content previously encrypted with AES256 CBC mode. 
 // Random Initialized Vector and random secret key are stored on a separate file.

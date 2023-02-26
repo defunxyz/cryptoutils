@@ -1,10 +1,7 @@
 // Copyright (C) Fisnik. All rights reserved.
 // Performs Hashing using Secure Hash Algorithm 2, utilizing the SHA-384 cryptographic hash function.
 #include <iostream>
-#include "crypto++/hex.h"
-#include "crypto++/sha.h"
-
-using namespace CryptoPP;
+#include "common.h"
 
 void print_help() {}
 void generate_sha384_hash(const std::string& msg, SHA384& hash, std::string& out){}
