@@ -1,15 +1,5 @@
-/*++
-    rsa_keypair.cpp
-    
-    Author: Fisnik
-    Copyright (C) Fisnik
-    
-    Abstract:
-        Generates RSA Public Private KeyPair based on PEM X.509
-    
-    This source code is licensed under the MIT license found in the
-    LICENSE file in the root directory of this source tree. 
---*/
+// Copyright (C) Fisnik. All rights reserved.
+// Generates RSA Public Private KeyPair based on PEM X.509
 #include <iostream>
 #include <string>
 #include <filesystem>

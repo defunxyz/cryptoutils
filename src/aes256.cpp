@@ -1,16 +1,4 @@
-/*++
-    aes256.cpp
-    
-    Author: Fisnik
-    Copyright (C) Fisnik
-    
-    Abstract:
-        Encryption and Decryption of content previously encrypted with AES256 CBC mode. 
-        Random Iitialized Vector and random secret key are stored on a separate file.
-    
-    This source code is licensed under the MIT license found in the
-    LICENSE file in the root directory of this source tree. 
---*/
+// Copyright (C) Fisnik. All rights reserved.
 #include <iostream>
 #include <fstream>
 #include <streambuf>
@@ -32,6 +20,9 @@ namespace fs = std::filesystem;
 using namespace CryptoPP;
 
 constexpr auto ITERATIONS = 0x3E8;
+
+// Encryption and Decryption of content previously encrypted with AES256 CBC mode. 
+// Random Initialized Vector and random secret key are stored on a separate file.
 
 void print_help(){}
 void read_file(std::ifstream& in, std::vector<char>& buffer){}

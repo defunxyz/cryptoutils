@@ -1,15 +1,5 @@
-/*++
-    sha384.cpp
-    
-    Author: Fisnik
-    Copyright (C) Fisnik
-    
-    Abstract:
-        Performs Hashing using Secure Hash Algorithm 2, utilizing the SHA-384 cryptographic hash function.
-    
-    This source code is licensed under the MIT license found in the
-    LICENSE file in the root directory of this source tree. 
---*/
+// Copyright (C) Fisnik. All rights reserved.
+// Performs Hashing using Secure Hash Algorithm 2, utilizing the SHA-384 cryptographic hash function.
 #include <iostream>
 #include "crypto++/hex.h"
 #include "crypto++/sha.h"
