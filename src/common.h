@@ -21,6 +21,9 @@
 #include "crypto++/pwdbased.h"
 #include "crypto++/hex.h"
 
+#include "fmt/core.h"
+#include "fmt/color.h"
+
 namespace fs = std::filesystem;
 using namespace CryptoPP;
 
