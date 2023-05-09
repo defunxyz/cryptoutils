@@ -65,9 +65,10 @@ typename std::enable_if<is_vector<T>::value>::type pretty_print(const T& x){
 }
 
 template<typename T>
-void pretty_print(const T& x) {
-
+typename std::enable_if<!is_vector<T>::value>::type pretty_print(const T& x){
+    // print.
 }
+
 
 int main(int argc, const char* argv[]) {
     
