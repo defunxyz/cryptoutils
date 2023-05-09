@@ -69,6 +69,16 @@
         "xstddef": "cpp",
         "xtr1common": "cpp",
         "xtree": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "any": "cpp",
+        "array": "cpp",
+        "complex": "cpp",
+        "cstdarg": "cpp",
+        "queue": "cpp",
+        "set": "cpp",
+        "stack": "cpp",
+        "typeindex": "cpp",
+        "variant": "cpp",
+        "unordered_set": "cpp"
     }
 }

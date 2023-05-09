@@ -6,10 +6,10 @@
 void print_help() 
 {
     std::string msg = R"(
-        sha384.exe -- SHA384 Cryptographic String Hash Generator
+        sha384 -- SHA384 Cryptographic String Hash Generator
         Usage:
-            sha384.exe  [-m plaintext]
-            sha384.exe  [-m plaintext] [-v hash]
+            sha384  [-m plaintext]
+            sha384  [-m plaintext] [-v hash]
         
         Command line options:
             -h --help	       Display the help.

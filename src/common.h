@@ -20,6 +20,7 @@
 #include "crypto++/aes.h"
 #include "crypto++/pwdbased.h"
 #include "crypto++/hex.h"
+#include "crypto++/cryptlib.h"
 
 #include "fmt/core.h"
 #include "fmt/color.h"
