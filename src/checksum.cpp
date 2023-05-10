@@ -44,9 +44,10 @@ void recursive_file_hash(const fs::path directory, std::string filter = "*.*")
         std::string filename = file.path().filename().string();
 
         if(m_filter){
-            if(file.path().filename().extension() != filter) {
+            std::string ext = file.path().filename().extension().string();
+            if(strcmp(&ext[1], &filter[1]) != 0) {
                 continue;
-            }
+            } 
         }
 
         checksum_info m_info;
@@ -59,15 +60,11 @@ void recursive_file_hash(const fs::path directory, std::string filter = "*.*")
 
 template<typename T>
 typename std::enable_if<is_vector<T>::value>::type pretty_print(const T& x){
-    for(auto f: x){
-        // print.
-    }
+    for(auto f: x){}
 }
 
 template<typename T>
-typename std::enable_if<!is_vector<T>::value>::type pretty_print(const T& x){
-    // print.
-}
+typename std::enable_if<!is_vector<T>::value>::type pretty_print(const T& x){}
 
 
 int main(int argc, const char* argv[]) {
@@ -85,7 +82,7 @@ int main(int argc, const char* argv[]) {
         print_help();
         return -1;
     }
-    else if (strcmp(argv[1], "-d") == 0 && strcmp(argv[3], "*.") == 0) {
+    else if (strcmp(argv[1], "-d") == 0 && strncmp(argv[3], "*.", 2) == 0) {
         recursive_file_hash(fs::path(argv[2]), argv[3]);
     }
     else {
