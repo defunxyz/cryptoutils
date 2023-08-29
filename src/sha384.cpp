@@ -1,7 +1,13 @@
 // Copyright (C) Fisnik. All rights reserved.
 // Performs Hashing using Secure Hash Algorithm 2, utilizing the SHA-384 cryptographic hash function.
 #include <iostream>
-#include "common.h"
+
+#include "cryptopp/hex.h"
+#include "cryptopp/sha.h"
+#include "fmt/include/fmt/core.h"
+#include "fmt/include/fmt/color.h"
+
+using namespace CryptoPP;
 
 void print_help() 
 {
@@ -75,5 +81,6 @@ int main(int argc, const char* argv[])
             fmt::styled(m_output, fmt::emphasis::bold | fg(fmt::color::cyan)));
     }
 
+    std::cin.get();
     return 0; 
 }

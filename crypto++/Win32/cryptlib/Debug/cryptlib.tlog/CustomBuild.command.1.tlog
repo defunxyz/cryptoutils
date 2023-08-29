@@ -1,7 +1,0 @@
-^C:\TOOLCHAIN\CPP\CRYPTO++\ADHOC.CPP.PROTO
-if not exist adhoc.cpp copy "C:\toolchain\cpp\crypto++\adhoc.cpp.proto" adhoc.cpp
-        echo: >> adhoc.cpp.copied
-^C:\TOOLCHAIN\CPP\CRYPTO++\RDRAND.ASM
-ml.exe /c /nologo /D_M_X86 /W3 /Cx /Zi /safeseh /Fo"Win32\cryptlib\Debug\rdrand-x86.obj" "C:\toolchain\cpp\crypto++\rdrand.asm"
-^C:\TOOLCHAIN\CPP\CRYPTO++\RDSEED.ASM
-ml.exe /c /nologo /D_M_X86 /W3 /Cx /Zi /safeseh /Fo"Win32\cryptlib\Debug\rdseed-x86.obj" "C:\toolchain\cpp\crypto++\rdseed.asm"
