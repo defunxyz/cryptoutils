@@ -8,10 +8,20 @@ set(CMAKE_C_COMPILER "C:/msys64/mingw64/bin/gcc.exe")
 
 project(Cryptoutils)
 
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CRYPTOPP_SOURCES "${PROJECT_SOURCE_DIR}/cryptopp/")
 set(GHC_FILESYSTEM_BUILD_TESTING OFF)
 set(GHC_FILESYSTEM_BUILD_EXAMPLES OFF)
+
+#set(CRYPTOPP_SOURCES "cryptopp")
+set(cryptopp_comp_static YES)
+#set(CMAKE_PREFIX_PATH "cryptopp-cmake/cryptopp/") # cryptoppConfig.cmake
+
+set(CMAKE_EXE_LINKER_FLAGS "")
+
+add_compile_options(-std=c++11 -Wall -fno-devirtualize)
 
 set(third_parties fmt ghc_filesystem cryptopp)
 

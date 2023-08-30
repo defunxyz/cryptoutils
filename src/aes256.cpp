@@ -8,16 +8,16 @@
 void print_help()
 {
     std::string msg = R"(
-        aes256.exe -- Advanced Encryption Standard 256 with CBC Mode
-        Usage:
-            aes256  [-e file]
-            aes256  [-d file] [-k keyfile]
-        
-        Command line options:
-            -h --help	       Display the help.
-            -e --encrypt       Encrypts a file.
-            -d --decrypt       Decrypts an encrypted file.
-            -k --key           Original key file.
+aes256.exe -- Advanced Encryption Standard 256 with CBC Mode
+Usage:
+	aes256  [-e file]
+	aes256  [-d file] [-k keyfile]
+
+Command line options:
+	-h --help	       Display the help.
+	-e --encrypt       Encrypts a file.
+	-d --decrypt       Decrypts an encrypted file.
+	-k --key           Original key file.
     )";
 
     std::cout << msg << "\n";

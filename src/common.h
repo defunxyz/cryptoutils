@@ -7,6 +7,7 @@
 #include <vector>
 #include <cassert>
 #include <Windows.h>
+#include <string>
 
 #if ((defined(_MSVC_LANG) && _MSVC_LANG >= 201703L) || __cplusplus >= 201703L && defined(__has_include))
 #include <filesystem>

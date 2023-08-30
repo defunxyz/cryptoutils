@@ -2,25 +2,25 @@
 // Performs Hashing using Secure Hash Algorithm 2, utilizing the SHA-384 cryptographic hash function.
 #include <iostream>
 
-#include "cryptopp/hex.h"
-#include "cryptopp/sha.h"
-#include "fmt/include/fmt/core.h"
-#include "fmt/include/fmt/color.h"
+#include "../cryptopp/hex.h"
+#include "../cryptopp/sha.h"
+#include "../fmt/include/fmt/core.h"
+#include "../fmt/include/fmt/color.h"
 
 using namespace CryptoPP;
 
 void print_help() 
 {
     std::string msg = R"(
-        sha384 -- SHA384 Cryptographic String Hash Generator
-        Usage:
-            sha384  [-m plaintext]
-            sha384  [-m plaintext] [-v hash]
-        
-        Command line options:
-            -h --help	       Display the help.
-            -m, --message      A plain text message.
-            -v, --verify       A sha256 hash string to check against.
+sha384 -- SHA384 Cryptographic String Hash Generator
+Usage:
+    sha384  [-m plaintext]
+    sha384  [-m plaintext] [-v hash]
+
+Command line options:
+    -h --help	       Display the help.
+    -m, --message      A plain text message.
+    -v, --verify       A sha256 hash string to check against.
     )";
 
     std::cout << msg << "\n";
@@ -38,7 +38,7 @@ int main(int argc, const char* argv[])
     std::string m_message, m_output;
 
     if (argc < 2) {
-        std::cerr << "No arguments passed in\n";
+        std::cerr << "No arguments passed in.\n";
         print_help();
         return -1;
     }
