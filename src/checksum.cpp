@@ -67,18 +67,12 @@ typename std::enable_if<is_vector<T>::value>::type pretty_print(const T& x){
 
 template<typename T>
 typename std::enable_if<!is_vector<T>::value>::type pretty_print(const T& x){
-    
-    try{
-        fmt::print("Filename: {}\n",
-            fmt::styled(x.filename, fg(fmt::color::white)));
-        fmt::print("Hashes:\n");
-        for(auto hash: x.hashes){
-            fmt::print("{} : {}\n", hash.first,
-            fmt::styled(hash.second, fmt::emphasis::bold | fg(fmt::color::green)));
-        }
-    }
-    catch(fmt::v9::format_error& err){
-       std::cerr << err.what() << "\n";
+    fmt::print("Filename: {}\n",
+        fmt::styled(x.filename, fg(fmt::color::white)));
+    fmt::print("Hashes:\n");
+    for(auto hash: x.hashes){
+        fmt::print("{} : {}\n", hash.first,
+        fmt::styled(hash.second, fmt::emphasis::bold | fg(fmt::color::green)));
     }
 }
 

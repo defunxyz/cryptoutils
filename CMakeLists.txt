@@ -8,30 +8,28 @@ set(CMAKE_C_COMPILER "C:/msys64/mingw64/bin/gcc.exe")
 
 project(Cryptoutils)
 
+set(THIRD_PARTY_DIRECTORY "third-party/")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(CRYPTOPP_SOURCES "${PROJECT_SOURCE_DIR}/third-party/cryptopp/")
+# Point to the proper directory:
+set(CRYPTOPP_SOURCES "${PROJECT_SOURCE_DIR}/${THIRD_PARTY_DIRECTORY}cryptopp/")
 set(GHC_FILESYSTEM_BUILD_TESTING OFF)
 set(GHC_FILESYSTEM_BUILD_EXAMPLES OFF)
 
-#set(CRYPTOPP_SOURCES "cryptopp")
-set(cryptopp_comp_static YES)
-#set(CMAKE_PREFIX_PATH "cryptopp-cmake/cryptopp/") # cryptoppConfig.cmake
-
+set(cryptopp_comp_static YES) # Enable static linking
 set(CMAKE_EXE_LINKER_FLAGS "")
-
 add_compile_options(-std=c++11 -Wall -fno-devirtualize)
 
 set(third_parties fmt ghc_filesystem cryptopp)
 
-include_directories(${PROJECT_SOURCE_DIR}/third-party/cryptopp/)
-include_directories(${PROJECT_SOURCE_DIR}/third-party/filesystem/include/ghc/)
-include_directories(${PROJECT_SOURCE_DIR}/third-party/fmt/include/fmt/)
+include_directories(${PROJECT_SOURCE_DIR}/${THIRD_PARTY_DIRECTORY}cryptopp/)
+include_directories(${PROJECT_SOURCE_DIR}/${THIRD_PARTY_DIRECTORY}filesystem/include/ghc/)
+include_directories(${PROJECT_SOURCE_DIR}/${THIRD_PARTY_DIRECTORY}fmt/include/fmt/)
 
-add_subdirectory(third-party/fmt)
-add_subdirectory(third-party/filesystem)
-add_subdirectory(third-party/cryptopp-cmake)
+add_subdirectory(${THIRD_PARTY_DIRECTORY}fmt)
+add_subdirectory(${THIRD_PARTY_DIRECTORY}filesystem)
+add_subdirectory(${THIRD_PARTY_DIRECTORY}cryptopp-cmake)
 
 file(GLOB APP_SOURCES src/*.cpp)
 foreach(SOURCE_PATH ${APP_SOURCES})
