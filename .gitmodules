@@ -1,12 +1,12 @@
 [submodule "fmt"]
-	path = fmt
+	path = third-party/fmt
 	url = https://github.com/fmtlib/fmt.git
 [submodule "filesystem"]
-	path = filesystem
+	path = third-party/filesystem
 	url = https://github.com/gulrak/filesystem.git
 [submodule "cryptopp-cmake"]
-	path = cryptopp-cmake
+	path = third-party/cryptopp-cmake
 	url = https://github.com/abdes/cryptopp-cmake.git
 [submodule "cryptopp"]
-	path = cryptopp
+	path = third-party/cryptopp
 	url = https://github.com/weidai11/cryptopp.git

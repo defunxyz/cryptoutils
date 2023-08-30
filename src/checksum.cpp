@@ -2,7 +2,7 @@
 #include <map>
 #include "common.h"
 #include "type_traits.h"
-#include "../cryptopp/sha.h"
+#include "../third-party/cryptopp/sha.h"
 
 void print_help()
 {

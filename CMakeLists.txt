@@ -11,7 +11,7 @@ project(Cryptoutils)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(CRYPTOPP_SOURCES "${PROJECT_SOURCE_DIR}/cryptopp/")
+set(CRYPTOPP_SOURCES "${PROJECT_SOURCE_DIR}/third-party/cryptopp/")
 set(GHC_FILESYSTEM_BUILD_TESTING OFF)
 set(GHC_FILESYSTEM_BUILD_EXAMPLES OFF)
 
@@ -25,13 +25,13 @@ add_compile_options(-std=c++11 -Wall -fno-devirtualize)
 
 set(third_parties fmt ghc_filesystem cryptopp)
 
-include_directories(${PROJECT_SOURCE_DIR}/cryptopp/)
-include_directories(${PROJECT_SOURCE_DIR}/filesystem/include/ghc/)
-include_directories(${PROJECT_SOURCE_DIR}/fmt/include/fmt/)
+include_directories(${PROJECT_SOURCE_DIR}/third-party/cryptopp/)
+include_directories(${PROJECT_SOURCE_DIR}/third-party/filesystem/include/ghc/)
+include_directories(${PROJECT_SOURCE_DIR}/third-party/fmt/include/fmt/)
 
-add_subdirectory(fmt)
-add_subdirectory(filesystem)
-add_subdirectory(cryptopp-cmake)
+add_subdirectory(third-party/fmt)
+add_subdirectory(third-party/filesystem)
+add_subdirectory(third-party/cryptopp-cmake)
 
 file(GLOB APP_SOURCES src/*.cpp)
 foreach(SOURCE_PATH ${APP_SOURCES})

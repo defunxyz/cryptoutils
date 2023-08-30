@@ -13,25 +13,25 @@
 #include <filesystem>
 namespace fs = std::filesystem;
 #else
-#include "../ghc/filesystem.hpp"
+#include "../third-party/filesystem/include/ghc/filesystem.hpp"
 namespace fs = ghc::filesystem;
 #endif
 
-#include "../cryptopp/rsa.h"
-#include "../cryptopp/osrng.h"
-#include "../cryptopp/base64.h"
-#include "../cryptopp/files.h"
-#include "../cryptopp/pem.h"
-#include "../cryptopp/modes.h"
-#include "../cryptopp/sha.h"
-#include "../cryptopp/ccm.h"
-#include "../cryptopp/aes.h"
-#include "../cryptopp/pwdbased.h"
-#include "../cryptopp/hex.h"
-#include "../cryptopp/cryptlib.h"
+#include "../third-party/cryptopp/rsa.h"
+#include "../third-party/cryptopp/osrng.h"
+#include "../third-party/cryptopp/base64.h"
+#include "../third-party/cryptopp/files.h"
+#include "../third-party/cryptopp/pem.h"
+#include "../third-party/cryptopp/modes.h"
+#include "../third-party/cryptopp/sha.h"
+#include "../third-party/cryptopp/ccm.h"
+#include "../third-party/cryptopp/aes.h"
+#include "../third-party/cryptopp/pwdbased.h"
+#include "../third-party/cryptopp/hex.h"
+#include "../third-party/cryptopp/cryptlib.h"
 
-#include "../fmt/include/fmt/core.h"
-#include "../fmt/include/fmt/color.h"
+#include "../third-party/fmt/include/fmt/core.h"
+#include "../third-party/fmt/include/fmt/color.h"
 
 using namespace CryptoPP;
 

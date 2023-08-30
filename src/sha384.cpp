@@ -2,10 +2,10 @@
 // Performs Hashing using Secure Hash Algorithm 2, utilizing the SHA-384 cryptographic hash function.
 #include <iostream>
 
-#include "../cryptopp/hex.h"
-#include "../cryptopp/sha.h"
-#include "../fmt/include/fmt/core.h"
-#include "../fmt/include/fmt/color.h"
+#include "../third-party/cryptopp/hex.h"
+#include "../third-party/cryptopp/sha.h"
+#include "../third-party/fmt/include/fmt/core.h"
+#include "../third-party/fmt/include/fmt/color.h"
 
 using namespace CryptoPP;
 
