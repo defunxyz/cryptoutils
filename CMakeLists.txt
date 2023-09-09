@@ -3,25 +3,51 @@ cmake_minimum_required(VERSION 3.14)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-set(CMAKE_CXX_COMPILER "C:/msys64/mingw64/bin/g++.exe")
-set(CMAKE_C_COMPILER "C:/msys64/mingw64/bin/gcc.exe")
 
 project(Cryptoutils)
 
 set(THIRD_PARTY_DIRECTORY "third-party/")
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 # Point to the proper directory:
 set(CRYPTOPP_SOURCES "${PROJECT_SOURCE_DIR}/${THIRD_PARTY_DIRECTORY}cryptopp/")
 set(GHC_FILESYSTEM_BUILD_TESTING OFF)
 set(GHC_FILESYSTEM_BUILD_EXAMPLES OFF)
 
+set(third_parties fmt ghc_filesystem cryptopp)
+
 set(cryptopp_comp_static YES) # Enable static linking
 set(CMAKE_EXE_LINKER_FLAGS "")
-add_compile_options(-std=c++11 -Wall -fno-devirtualize)
 
-set(third_parties fmt ghc_filesystem cryptopp)
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    message(STATUS "GCC Detected: Initializing")
+    set(CMAKE_CXX_FLAGS
+        "${CMAKE_CXX_FLAGS} \
+        -Wall \
+        -Wformat \
+        -Wextra \
+        -Wmissing-include-dirs \
+        -fdiagnostics-color=always \
+        ")
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    message(STATUS "Clang Detected: Initializing")
+    set(CMAKE_CXX_FLAGS
+        "${CMAKE_CXX_FLAGS} \
+        -Wall \
+        -Werror \
+        -fcxx-exceptions \
+        -fexceptions \
+        -fdiagnostics-color=always \
+        ")
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    message(STATUS "MSVC Detected: Initializing")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHsc /utf-8")
+endif()
+
+if(WIN32)
+    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+    set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+endif()
 
 include_directories(${PROJECT_SOURCE_DIR}/${THIRD_PARTY_DIRECTORY}cryptopp/)
 include_directories(${PROJECT_SOURCE_DIR}/${THIRD_PARTY_DIRECTORY}filesystem/include/ghc/)
