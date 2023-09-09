@@ -2,13 +2,7 @@
 
 ## About 
 
-| Current utilities: |
-|--------------------|
-|     aes256         |
-|    aes_hmac        |
-|    asym_rsa        |
-|    checksum        |
-|    rsa_keypair     |
-|     sha384         |
+**Current utilities:**
+`aes256` `aes_hmac` `asym_rsa` `checksum` `rsa_keypair` `sha384`
 
 
