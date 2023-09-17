@@ -42,7 +42,7 @@ constexpr auto DEFAULT_BIT = 2048;
 constexpr auto DEFAULT_SESSION_KEY_BLOCK_SIZE = 256;
 
 template <typename T>
-T LoadKey(std::string filename)
+T load_key(std::string filename)
 {
 	T key;
 	FileSource fs(filename.c_str(), true);
@@ -51,7 +51,7 @@ T LoadKey(std::string filename)
 }
 
 template <typename T>
-void SaveKey(std::string filename, T &key)
+void save_key(std::string filename, T &key)
 {
 	FileSink file(filename.c_str(), true);
 	PEM_Save(file, key);
